@@ -12,6 +12,8 @@ class TicTacToeViewController: UIViewController {
 
     @IBOutlet var instructionLabel: UILabel!
 
+    var store: Store!
+
     var game = Game() {
         didSet {
             self.connect4View.board = game.board
@@ -21,18 +23,24 @@ class TicTacToeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let game = Game()
+        store = TicTacToeStore(delegate: self, game: game)
+//        connect4View.board = game.board
 
-        self.instructionLabel.text = "Place an \(self.game.currentPlayer.rawValue)"
+
+//        self.instructionLabel.text = "Place an \(self.game.currentPlayer.rawValue)"
 
         self.connect4View.buttonTappedClosure = { index in
-            let movePossible = self.game.attemptPlacing(atIndex: index)
-            if !movePossible {
-                self.instructionLabel.text = "Move is not possible! Place \(self.game.currentPlayer.rawValue) again."
-            }
-
-            if let winner = self.game.winner {
-                self.instructionLabel.text = "Player \(winner) Wins!!"
-            }
+            let action = UserTapAction(index: index)
+            self.store.handle(action: action)
+//            let movePossible = self.game.attemptPlacing(atIndex: index)
+//            if !movePossible {
+//                self.instructionLabel.text = "Move is not possible! Place \(self.game.currentPlayer.rawValue) again."
+//            }
+//
+//            if let winner = self.game.winner {
+//                self.instructionLabel.text = "Player \(winner) Wins!!"
+//            }
         }
     }
 
@@ -59,6 +67,13 @@ class TicTacToeViewController: UIViewController {
         return view
     }()
     
+}
+
+extension TicTacToeViewController: StoreDelegate {
+    func onStore(event: State) {
+        instructionLabel.text = event.instruction
+        connect4View.board = event.game.board
+    }
 }
 
 

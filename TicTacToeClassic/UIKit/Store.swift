@@ -8,17 +8,36 @@
 
 import Foundation
 
-
-
 protocol Store
 {
+    var delegate: StoreDelegate { get }
     func handle(action: Action)
 }
 
+protocol StoreDelegate {
+    func onStore(event: State)
+}
 
 class TicTacToeStore: Store
 {
-    var state: State!
+    var state: State {
+        didSet {
+            delegate.onStore(event: state)
+        }
+    }
+    var delegate: StoreDelegate {
+        didSet {
+            delegate.onStore(event: state)
+        }
+    }
+
+    init(delegate: StoreDelegate, game: Game) {
+        let instruction = game.currentPlayer == .x ? "Your move, x" : "Your move, o"
+        state = State(game: game, instruction: instruction)
+        self.delegate = delegate
+        delegate.onStore(event: state)
+    }
+
     func handle(action: Action)  {
         switch action
         {
@@ -43,6 +62,8 @@ class TicTacToeStore: Store
        else
        {
         state.instruction = "Invalid place, try again"
+
       }
+        delegate.onStore(event: state)
     }
 }

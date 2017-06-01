@@ -18,6 +18,7 @@ struct Board {
     var tokens: [Token]
 
     init() {
+        print("New board")
         self.tokens = Array(repeating: Token.empty, count: 9)
     }
 
