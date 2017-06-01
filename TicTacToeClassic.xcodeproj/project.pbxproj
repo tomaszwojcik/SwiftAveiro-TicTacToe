@@ -15,6 +15,7 @@
 		25FB336D1ED20B0800653F07 /* TicTacToeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 25FB33671ED20B0800653F07 /* TicTacToeView.xib */; };
 		25FB336E1ED20B0800653F07 /* TicTacToeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB33681ED20B0800653F07 /* TicTacToeViewController.swift */; };
 		25FB336F1ED20B0800653F07 /* TicTacToeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FB336A1ED20B0800653F07 /* TicTacToeGame.swift */; };
+		DF8A8D871EE05FCE00B52211 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8A8D861EE05FCE00B52211 /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		25FB33671ED20B0800653F07 /* TicTacToeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TicTacToeView.xib; sourceTree = "<group>"; };
 		25FB33681ED20B0800653F07 /* TicTacToeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicTacToeViewController.swift; sourceTree = "<group>"; };
 		25FB336A1ED20B0800653F07 /* TicTacToeGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TicTacToeGame.swift; sourceTree = "<group>"; };
+		DF8A8D861EE05FCE00B52211 /* Action.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				25FB33651ED20B0800653F07 /* AppDelegate.swift */,
 				25FB33661ED20B0800653F07 /* TicTacToeView.swift */,
+				DF8A8D861EE05FCE00B52211 /* Action.swift */,
 				25FB33671ED20B0800653F07 /* TicTacToeView.xib */,
 				25FB33681ED20B0800653F07 /* TicTacToeViewController.swift */,
 				25FB33561ED20A7D00653F07 /* Main.storyboard */,
@@ -165,6 +168,7 @@
 			files = (
 				25FB336F1ED20B0800653F07 /* TicTacToeGame.swift in Sources */,
 				25FB336B1ED20B0800653F07 /* AppDelegate.swift in Sources */,
+				DF8A8D871EE05FCE00B52211 /* Action.swift in Sources */,
 				25FB336C1ED20B0800653F07 /* TicTacToeView.swift in Sources */,
 				25FB336E1ED20B0800653F07 /* TicTacToeViewController.swift in Sources */,
 			);
@@ -335,6 +339,7 @@
 				25FB33631ED20A7D00653F07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
